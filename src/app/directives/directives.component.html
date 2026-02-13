@@ -1,0 +1,38 @@
+<section class="directives-form">
+	<h1>Directives Form, Diretivas de Controle de Formulário Builtin</h1>
+	<form (ngSubmit)="send()" #form="ngForm">
+  <!-- ngModel -->
+  <!-- ngModel, por que o #nameCtrl="ngModel"
+    Porque o ngModel expõe várias propriedades de controle do campo: valid, invalid, touched, untouched, dirty, pristine, etc.
+  -->
+
+  <!-- Diferença entre os bindings: [ngModel], (ngModel), e [(ngModel)]
+  | Sintaxe           | Tipo    | Fluxo            |
+  | ----------------- | ------- | ---------------- |
+  | `[ngModel]`       | One-way | Component → View |
+  | `(ngModelChange)` | Event   | View → Component |
+  | `[(ngModel)]`     | Two-way | Ambos            |
+  -->
+		<label for="name">Name</label>
+		<input id="name" name="name" type="text" placeholder="Your name" [(ngModel)]="name" #nameCtrl="ngModel" required/>
+    <small *ngIf="nameCtrl.invalid && nameCtrl.touched" style="color: red;">Mandatory field</small>
+
+		<label for="email">Email</label>
+		<input id="email" name="email" type="email" placeholder="you@example.com" [(ngModel)]="email" />
+
+		<label for="city">City</label>
+		<input id="city" name="city" type="text" placeholder="City" [(ngModel)]="city" />
+
+		<label for="message">Message</label>
+		<textarea id="message" name="message" rows="4" placeholder="Write your message" [(ngModel)]="message"></textarea>
+
+    <!-- ngFor sample-->
+    <label>Position</label>
+    <select name="position" [(ngModel)]="positions[0]">
+      <option *ngFor="let position of positions" [value]="position">{{ position }}</option>
+    </select>
+
+		<button type="submit" class="primary" (click)="send()">Submit</button>
+    <p>Seu nome: {{ name }}</p>
+	</form>
+</section>

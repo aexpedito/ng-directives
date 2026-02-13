@@ -1,0 +1,92 @@
+
+.directives-form {
+	max-width: 480px;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	border-radius: 8px;
+	background: #f5f7fb;
+	box-shadow: 0 2px 12px rgba(15, 23, 42, 0.1);
+
+	h1 {
+		margin: 0 0 1rem;
+		font-size: 1.5rem;
+		text-align: center;
+		color: #0f172a;
+	}
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	label {
+		font-weight: 600;
+		color: #1e293b;
+	}
+
+	small {
+		margin-top: -0.4rem;
+		margin-bottom: 0.2rem;
+		font-size: 0.8rem;
+		color: #dc2626;
+	}
+
+	input,
+	textarea,
+	select {
+		width: 100%;
+		padding: 0.65rem 0.75rem;
+		border: 1px solid #cbd5f5;
+		border-radius: 6px;
+		font-size: 0.95rem;
+		background: #fff;
+		transition: border-color 0.2s ease;
+
+		&:focus {
+			outline: none;
+			border-color: #2563eb;
+			box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+		}
+	}
+
+	select {
+		appearance: none;
+		background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(67, 56, 202, 0.08))
+			no-repeat right 0.75rem center;
+		background-size: 0.65rem;
+		background-image:
+			linear-gradient(45deg, transparent 50%, #4338ca 50%),
+			linear-gradient(135deg, #4338ca 50%, transparent 50%),
+			linear-gradient(to right, #a5b4fc, #93c5fd);
+		background-position:
+			calc(100% - 1.1rem) center,
+			calc(100% - 0.7rem) center,
+			calc(100% - 2.3rem) center;
+		background-repeat: no-repeat;
+		padding-right: 2.5rem;
+		cursor: pointer;
+	}
+
+	.primary {
+		margin-top: 0.5rem;
+		padding: 0.75rem;
+		border: none;
+		border-radius: 6px;
+		background: linear-gradient(135deg, #2563eb, #4338ca);
+		color: #fff;
+		font-weight: 600;
+		cursor: pointer;
+		transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+		&:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 6px 18px rgba(37, 99, 235, 0.25);
+		}
+
+		&:active {
+			transform: translateY(0);
+			box-shadow: none;
+		}
+	}
+}
